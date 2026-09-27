@@ -50,7 +50,7 @@ Full brand kit (colours, fonts, logo, voice, usage rules): the "Braxus Plumbing"
 | Text on dark | `#F5F4F1` (headings), `#C7CCD1` (body) |
 | Lines | `#D5D8DA` |
 
-- **Headings font:** Big Shoulders Display (600/700/800), Google Fonts
+- **Headings font:** Unbounded (600/700/800), Google Fonts, chosen to match the wide, heavy logo lettering. Section headings (h2) are uppercase.
 - **Body font:** IBM Plex Sans (400/500/600), Google Fonts
 - Square-ish corners (3px radius), thin lines, small blue dot before section labels.
 
