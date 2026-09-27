@@ -28,8 +28,12 @@ Toronto GTA, Markham, Unionville, Richmond Hill, Thornhill, Stouffville, Vaughan
 
 ## Brand
 
+Full brand kit (colours, fonts, logo, voice, usage rules): the "Braxus Plumbing" design system, https://claude.ai/artifact/5S5pCTvLkqz7Nv1c5beKj8. Use it for any new Braxus design, post or document.
+
 ### Logo
 - `brand/braxus-logo-white.png` (887×204, transparent background): "BRAXUS" in white block capitals with a blue water drop in the A, "PLUMBING" in blue letter-spaced capitals between two blue rules.
+- `brand/braxus-logo-on-black.png` (703×364): the same logo on the black business card, cropped from the card file.
+- `brand/braxus-business-card-front.pdf`: the business card front, supplied by Sean as the official logo.
 - White lettering, so it only works on dark backgrounds (black or navy). There is no dark-on-light version yet.
 - Logo blue sampled from the file: about `#3F8DF2`.
 
