@@ -17,6 +17,7 @@ Saved 27 Sep 2026 so future chats have the full picture. Keep this file up to da
 
 ### Services
 1. Residential Emergency Plumbing: burst/leaking pipes, no hot water / water heater failure, sewer and drain backups, leaking or seized shut-off valves, frozen pipe thawing
+   - Emergency Drain Backups (own dropdown on the site, residential & commercial): basement floor drain backups, main sewer line blockages, toilets/tubs/showers backing up, kitchen/laundry/sink drain clogs, backwater valve checks after a backup
 2. Residential Renovations & Installations: bathroom & kitchen rough-in and reno plumbing, fixture/faucet/toilet installation, water heaters (tank & tankless), sump pump and backwater valve installation, repiping and shut-off valve upgrades
 3. Commercial Emergency Plumbing: burst supply lines and flooding response, drain and sewer backups, washroom and fixture failures, emergency water shut-off and isolation
 4. Commercial Maintenance: routine fixture and line inspections, preventive maintenance scheduling, backflow and valve checks, tenant fixture repairs and upkeep
