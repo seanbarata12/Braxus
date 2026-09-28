@@ -20,6 +20,7 @@ Saved 27 Sep 2026 so future chats have the full picture. Keep this file up to da
    - Emergency Drain Backups (own dropdown on the site, residential & commercial): basement floor drain backups, main sewer line blockages, toilets/tubs/showers backing up, kitchen/laundry/sink drain clogs, backwater valve checks after a backup
 2. Residential Renovations & Installations: bathroom & kitchen rough-in and reno plumbing, fixture/faucet/toilet installation, water heaters (tank & tankless), sump pump and backwater valve installation, repiping and shut-off valve upgrades
 3. Commercial Emergency Plumbing: burst supply lines and flooding response, drain and sewer backups, washroom and fixture failures, emergency water shut-off and isolation
+   - Commercial Renovations & Installations (own dropdown, added 28 Sep 2026): tenant fit-out and renovation rough-in, commercial washroom and fixture installation, commercial water heaters, grease interceptor and backflow preventer installation, kitchen and equipment hookups for food service
 4. Commercial Maintenance: routine fixture and line inspections, preventive maintenance scheduling, backflow and valve checks, tenant fixture repairs and upkeep
 5. PRV (Pressure Reducing Valve) Maintenance: pressure testing and diagnosis, adjustment and calibration, replacement, high-pressure damage prevention checks
 6. Mixing Valve Maintenance: mixing/tempering valve calibration, temperature testing, repair and replacement, scald-protection compliance checks
