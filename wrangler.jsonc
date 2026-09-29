@@ -2,7 +2,17 @@
   // Must match the Worker's name in the Cloudflare dashboard.
   "name": "brax",
   "compatibility_date": "2026-09-01",
+  // Small script that handles the quote form (POST /api/quote).
+  // Everything else is served straight from ./public as before.
+  "main": "src/worker.js",
   "assets": {
-    "directory": "./public"
-  }
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  // Quote requests are emailed here. Locked to this one address.
+  // Needs Email Routing on braxusplumbing.com with this address verified.
+  "send_email": [
+    { "name": "QUOTE_EMAIL", "destination_address": "seanbarata@hotmail.com" }
+  ]
 }

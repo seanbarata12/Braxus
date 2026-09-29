@@ -123,6 +123,46 @@
   .contact-links a:hover { color: var(--accent-light); }
   .legal { border-top: 1px solid #182530; padding-top: 24px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 13px; color: #7A8794; }
 
+  /* Quote request form */
+  .quote { background: var(--white); border-top: 1px solid var(--line); }
+  .quote .wrap { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 56px; align-items: start; }
+  .quote h2 { font-size: 30px; margin-bottom: 12px; }
+  .quote .lead { margin-bottom: 24px; }
+  .quote-points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .quote-points li { display: flex; gap: 10px; font-size: 15px; line-height: 1.5; color: var(--body); }
+  .quote-points li::before { content: "—"; color: var(--accent); flex-shrink: 0; }
+  .quote-urgent { margin-top: 28px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 3px; background: var(--paper); font-size: 14px; line-height: 1.55; color: var(--body); }
+  .quote-urgent a { font-weight: 600; color: var(--ink); border-bottom: 2px solid var(--accent); white-space: nowrap; }
+  .qform { background: var(--paper); border: 1px solid var(--line); border-radius: 3px; padding: 28px; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+  .field { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+  .field.full { grid-column: 1 / -1; }
+  .field label, .field legend { font-size: 13px; font-weight: 600; color: var(--ink); padding: 0; }
+  .field label span { color: var(--slate); font-weight: 400; }
+  .field input, .field select, .field textarea { width: 100%; font: inherit; font-size: 15px; color: var(--ink); background: var(--white); border: 1px solid #C9CED2; border-radius: 3px; padding: 12px 13px; }
+  .field textarea { min-height: 116px; resize: vertical; line-height: 1.5; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(20,137,250,.18); }
+  .field .err { display: none; font-size: 13px; color: #B42318; }
+  .field.invalid input { border-color: #B42318; }
+  .field.invalid .err { display: block; }
+  fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
+  .seg { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
+  .seg input { position: absolute; left: 0; top: 0; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+  .seg label { display: flex; align-items: center; justify-content: center; text-align: center; padding: 11px 8px; border: 1px solid #C9CED2; border-radius: 3px; background: var(--white); font-size: 14px; font-weight: 500; cursor: pointer; }
+  .seg input:checked + label { border-color: var(--ink); background: var(--ink); color: var(--white); }
+  .seg input:focus-visible + label { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-actions { grid-column: 1 / -1; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 4px; }
+  .form-actions button { font: inherit; font-weight: 600; font-size: 15px; cursor: pointer; border: 0; }
+  .form-actions button:disabled { opacity: .6; cursor: default; }
+  .form-note { font-size: 13px; color: var(--slate); }
+  .form-status { grid-column: 1 / -1; padding: 12px 14px; border-radius: 3px; font-size: 14px; line-height: 1.5; }
+  .form-status.ok { background: #EAF4FF; color: var(--steel); }
+  .form-status.bad { background: #FDECEA; color: #8A1C12; }
+  .qdone { grid-column: 1 / -1; text-align: center; padding: 24px 8px; }
+  .qdone .tick { width: 52px; height: 52px; margin: 0 auto 16px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; }
+  .qdone .t { font-family: var(--display); font-weight: 800; font-size: 20px; text-transform: uppercase; margin-bottom: 8px; }
+  .qdone p { margin: 0 auto; max-width: 420px; font-size: 15px; line-height: 1.6; color: var(--slate); }
+
   @media (max-width: 760px) {
     .nav-links { display: none; }
     .brand img { width: 170px; }
@@ -135,6 +175,9 @@
     .trust-item:nth-child(2n+1) { padding-right: 20px; }
     .steps-grid { grid-template-columns: 1fr; }
     .area-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .quote .wrap { grid-template-columns: 1fr; gap: 32px; }
+    .quote h2 { font-size: 24px; }
+    .qform { grid-template-columns: 1fr; padding: 20px; }
   }
 </style>
 </head>
@@ -402,6 +445,81 @@
       </ul>
     </div>
   </section>
+  <section id="quote" class="quote">
+    <div class="wrap section">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>Free quote</div>
+        <h2>Request a quote</h2>
+        <p class="lead">Tell us about the job and we'll get back to you with next steps.</p>
+        <ul class="quote-points">
+          <li>Renovations, installations, maintenance and repairs</li>
+          <li>Homes and commercial properties across the GTA</li>
+          <li>We walk you through the plan before any work starts</li>
+        </ul>
+        <div class="quote-urgent"><strong>Emergency?</strong> Don't wait on a form. Call or text <a href="tel:+16474689696">(647) 468-9696</a>.</div>
+      </div>
+
+      <form class="qform" id="quote-form" novalidate>
+        <div class="field" id="f-name">
+          <label for="q-name">Your name</label>
+          <input id="q-name" name="name" autocomplete="name" maxlength="100" required>
+          <div class="err">Please add your name.</div>
+        </div>
+        <div class="field" id="f-phone">
+          <label for="q-phone">Phone</label>
+          <input id="q-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" required>
+          <div class="err">Please add a phone number so we can reach you.</div>
+        </div>
+        <div class="field" id="f-email">
+          <label for="q-email">Email <span>(optional)</span></label>
+          <input id="q-email" name="email" type="email" autocomplete="email" maxlength="150">
+          <div class="err">Please check your email address, or leave it blank.</div>
+        </div>
+        <div class="field">
+          <label for="q-area">Town or area</label>
+          <input id="q-area" name="area" list="q-towns" autocomplete="address-level2" maxlength="80" placeholder="e.g. Markham">
+          <datalist id="q-towns">
+            <option value="Toronto"><option value="Markham"><option value="Unionville"><option value="Richmond Hill"><option value="Thornhill"><option value="Stouffville"><option value="Vaughan"><option value="Scarborough"><option value="North York"><option value="Durham"><option value="Oshawa"><option value="Pickering"><option value="Whitby"><option value="Newmarket"><option value="Mississauga"><option value="Brampton">
+          </datalist>
+        </div>
+        <div class="field full">
+          <label for="q-service">Service</label>
+          <select id="q-service" name="service">
+            <option>Residential emergency plumbing</option>
+            <option>Emergency drain backup</option>
+            <option selected>Residential renovation / installation</option>
+            <option>Commercial emergency plumbing</option>
+            <option>Commercial renovation / installation</option>
+            <option>Commercial maintenance</option>
+            <option>PRV maintenance</option>
+            <option>Mixing valve maintenance</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <fieldset class="field full">
+          <legend>When do you need it?</legend>
+          <div class="seg">
+            <input type="radio" name="timing" id="w1" value="As soon as possible"><label for="w1">As soon as possible</label>
+            <input type="radio" name="timing" id="w2" value="In the next few weeks" checked><label for="w2">Next few weeks</label>
+            <input type="radio" name="timing" id="w3" value="Just planning"><label for="w3">Just planning</label>
+          </div>
+        </fieldset>
+        <div class="field full">
+          <label for="q-details">About the job <span>(optional)</span></label>
+          <textarea id="q-details" name="details" maxlength="3000" placeholder="e.g. Basement bathroom rough-in, about 6 × 8 ft, drain already roughed in."></textarea>
+        </div>
+        <div class="hp" aria-hidden="true">
+          <label for="q-website">Leave this empty</label>
+          <input id="q-website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-solid" id="q-send">Send request</button>
+          <span class="form-note">Goes straight to Braxus. No spam, ever.</span>
+        </div>
+        <div class="form-status" id="q-status" role="status" hidden></div>
+      </form>
+    </div>
+  </section>
 </main>
 
 <footer id="contact" class="contact">
@@ -434,5 +552,57 @@
   </div>
 </footer>
 
+<script>
+  // Quote form: sends the request to /api/quote, which emails it to Braxus.
+  (function () {
+    var form = document.getElementById('quote-form');
+    if (!form) return;
+    var started = Date.now();
+    var status = document.getElementById('q-status');
+    var btn = document.getElementById('q-send');
+    function v(id) { return (document.getElementById(id).value || '').trim(); }
+    function mark(fieldId, bad) { document.getElementById(fieldId).classList.toggle('invalid', bad); return bad; }
+    function show(msg, cls) { status.textContent = msg; status.className = 'form-status ' + cls; status.hidden = false; }
+    form.addEventListener('input', function (e) {
+      var f = e.target.closest('.field');
+      if (f && f.classList.contains('invalid')) f.classList.remove('invalid');
+    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      status.hidden = true;
+      var badName = mark('f-name', !v('q-name'));
+      var badPhone = mark('f-phone', v('q-phone').replace(/\D/g, '').length < 7);
+      var em = v('q-email');
+      var badEmail = mark('f-email', !!em && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em));
+      if (badName) return document.getElementById('q-name').focus();
+      if (badPhone) return document.getElementById('q-phone').focus();
+      if (badEmail) return document.getElementById('q-email').focus();
+
+      var timing = form.querySelector('input[name="timing"]:checked');
+      var payload = {
+        name: v('q-name'), phone: v('q-phone'), email: em, area: v('q-area'),
+        service: v('q-service'), timing: timing ? timing.value : '',
+        details: v('q-details'), website: v('q-website'), elapsed: Date.now() - started
+      };
+      btn.disabled = true; btn.textContent = 'Sending…';
+      fetch('/api/quote', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(payload) })
+        .then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
+        .then(function (res) {
+          if (res && res.ok) {
+            form.innerHTML = '<div class="qdone"><div class="tick"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></div>' +
+              '<div class="t">Request sent</div><p>Thanks, ' + payload.name.replace(/[<>&"]/g, '') + '. We\'ll be in touch soon. If it\'s urgent, call or text (647) 468-9696.</p></div>';
+            form.setAttribute('aria-live', 'polite');
+          } else {
+            show((res && res.error) || "Sorry, your request didn't go through. Please call or text (647) 468-9696.", 'bad');
+            btn.disabled = false; btn.textContent = 'Send request';
+          }
+        })
+        .catch(function () {
+          show("Sorry, your request didn't go through. Please check your connection, or call or text (647) 468-9696.", 'bad');
+          btn.disabled = false; btn.textContent = 'Send request';
+        });
+    });
+  })();
+</script>
 </body>
 </html>

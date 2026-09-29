@@ -67,6 +67,7 @@ Full brand kit (colours, fonts, logo, voice, usage rules): the "Braxus Plumbing"
 - `public/index.html` is the whole site (one page, plain HTML/CSS, no build step).
 - `wrangler.jsonc` deploys `public/` as static assets. The `name` **must stay `brax`**, the Worker's name in Cloudflare.
 - Cloudflare Workers Builds is connected to this repo: every push to `main` goes live on braxusplumbing.com within a minute or two.
+- **Quote form (added 29 Sep 2026, branch `quote-form`):** "Request a quote" section before the footer. It posts to `/api/quote`, handled by `src/worker.js`, which emails the request to seanbarata@hotmail.com from quotes@braxusplumbing.com using the `QUOTE_EMAIL` send_email binding (recipient locked in `wrangler.jsonc`). Requires Email Routing enabled on braxusplumbing.com with seanbarata@hotmail.com verified as a destination address. Spam protection: hidden honeypot field plus a minimum fill time. Test locally with `npx wrangler dev` (emails are written to `.wrangler/tmp/email/`).
 - Original design canvas (editable): https://claude.ai/artifact/Gaqfsf9aUdv4NPwPj24km4. The repo is now the source of truth for the live site.
 
 ## Other work made for Braxus (Claude artifacts)
