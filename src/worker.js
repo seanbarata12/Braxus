@@ -4,7 +4,7 @@
 // The recipient is locked in wrangler.jsonc (send_email.destination_address),
 // so this code cannot be used to send mail anywhere else.
 
-const FROM = { email: "quotes@mail.braxusplumbing.com", name: "Braxus Website" };
+const FROM = { email: "quotes@braxusplumbing.com", name: "Braxus Website" };
 
 const SERVICES = [
   "Residential emergency plumbing",
