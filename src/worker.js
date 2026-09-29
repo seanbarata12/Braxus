@@ -111,7 +111,7 @@ ${row("Timing", esc(q.timing || "-"))}
 </div>`;
 
   const message = {
-    to: "seanbarata@hotmail.com",
+    to: "sean@braxusplumbing.com",
     from: FROM,
     subject,
     text: lines.join("\n"),

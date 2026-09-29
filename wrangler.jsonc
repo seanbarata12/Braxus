@@ -10,9 +10,16 @@
     "binding": "ASSETS",
     "run_worker_first": ["/api/*"]
   },
-  // Quote requests are emailed here. Locked to this one address.
-  // Needs Email Routing on braxusplumbing.com with this address verified.
+  // Quote requests are emailed to Sean's Google Workspace inbox via
+  // Cloudflare Email Service (Email Sending). braxusplumbing.com must be
+  // onboarded under Email Service > Email Sending (records live on the
+  // cf-bounce subdomain, so they don't clash with Google's MX records).
+  // Email Routing is OFF on this domain: Google Workspace handles inbound mail.
   "send_email": [
-    { "name": "QUOTE_EMAIL", "destination_address": "seanbarata@hotmail.com" }
+    {
+      "name": "QUOTE_EMAIL",
+      "allowed_sender_addresses": ["quotes@braxusplumbing.com"],
+      "allowed_destination_addresses": ["sean@braxusplumbing.com"]
+    }
   ]
 }

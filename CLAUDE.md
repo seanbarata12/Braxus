@@ -9,7 +9,7 @@ Saved 27 Sep 2026 so future chats have the full picture. Keep this file up to da
 - **Owner:** Sean Barata
 - **Based in:** Markham, ON
 - **Phone / text:** (647) 468-9696 (links: `tel:+16474689696`, `sms:+16474689696`)
-- **Email:** seanbarata@hotmail.com
+- **Email:** sean@braxusplumbing.com (Google Workspace, set up 30 Sep 2026; DNS on Cloudflare, Email Routing turned off). Old personal address: seanbarata@hotmail.com
 - **Instagram:** @braxusplumbing (https://instagram.com/braxusplumbing)
 - **Website:** https://braxusplumbing.com
 - **Credentials:** over 10 years in the plumbing trade, fully licensed, fully insured
@@ -68,7 +68,7 @@ Full brand kit (colours, fonts, logo, voice, usage rules): the "Braxus Plumbing"
 - `wrangler.jsonc` deploys `public/` as static assets. The `name` **must stay `brax`**, the Worker's name in Cloudflare.
 - Cloudflare Workers Builds is connected to this repo: every push to `main` goes live on braxusplumbing.com within a minute or two.
 - **Site polish (29 Sep 2026, branch `quote-form`):** sticky header with active-section underline, hero "What do you need?" quick-pick panel linking to services, faint blueprint grid in hero, trust icons in blue circles, services grouped (Residential / Commercial / Specialty) in white panels with checkmark bullets, How it works as cards, service area beside heading (4 columns), FAQ section (7 questions + FAQPage schema), larger contact rows, mobile Call/Text bar, favicon, Open Graph + Plumber schema. Sean chose NOT to have the blue "Leak, backup or no hot water?" band or the "While you wait" tips.
-- **Quote form (added 29 Sep 2026, branch `quote-form`):** "Request a quote" section before the footer. It posts to `/api/quote`, handled by `src/worker.js`, which emails the request to seanbarata@hotmail.com from quotes@braxusplumbing.com using the `QUOTE_EMAIL` send_email binding (recipient locked in `wrangler.jsonc`). Requires Email Routing enabled on braxusplumbing.com with seanbarata@hotmail.com verified as a destination address. Spam protection: hidden honeypot field plus a minimum fill time. Test locally with `npx wrangler dev` (emails are written to `.wrangler/tmp/email/`).
+- **Quote form (added 29 Sep 2026, branch `quote-form`):** "Request a quote" section before the footer. It posts to `/api/quote`, handled by `src/worker.js`, which emails the request to sean@braxusplumbing.com from quotes@braxusplumbing.com using the `QUOTE_EMAIL` send_email binding (sender and recipient locked in `wrangler.jsonc`). Since 30 Sep 2026 this goes through Cloudflare Email Service > Email Sending (domain onboarded, records on `cf-bounce`), not Email Routing, because Google Workspace now owns the domain's MX records. Spam protection: hidden honeypot field plus a minimum fill time. Test locally with `npx wrangler dev` (emails are written to `.wrangler/tmp/email/`).
 - Original design canvas (editable): https://claude.ai/artifact/Gaqfsf9aUdv4NPwPj24km4. The repo is now the source of truth for the live site.
 
 ## Other work made for Braxus (Claude artifacts)
