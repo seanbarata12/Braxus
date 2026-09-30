@@ -80,3 +80,5 @@ Full brand kit (colours, fonts, logo, voice, usage rules): the "Braxus Plumbing"
 
 ## Other Cloudflare site
 - `apexplumbingcontracting` Worker, Apex Plumbing Contracting (separate site, not in this repo). Design: https://claude.ai/artifact/7cCasuX2D4Q7CfrdkqKQxF, business card: https://claude.ai/artifact/1rSXYgGUhGa1aHYY4trfNH
+
+- 2026-09-30: Fixed mobile layout — Quote and FAQ sections now stack to one column under 900px (they were squeezed into two narrow columns on phones, causing text to overflow). Tightened the "When do you need it?" buttons on phones.
