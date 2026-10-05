@@ -927,7 +927,7 @@
   }
 </script>
 <script>
-  // Google reviews: /api/reviews returns the rating and recent reviews.
+  // Google reviews: hand-picked list below (BRAXUS_REVIEWS).
   (function () {
     var sec = document.getElementById('reviews');
     if (!sec) return;
@@ -967,6 +967,7 @@
       return a;
     }
     function render(d) {
+      if (!d.rating || !d.count) document.querySelector('.rv-summary').style.display = 'none';
       document.getElementById('rv-score').textContent = d.rating.toFixed(1);
       document.getElementById('rv-stars').innerHTML = stars(d.rating);
       document.getElementById('rv-count').textContent = 'Based on ' + d.count + ' Google review' + (d.count === 1 ? '' : 's');
@@ -995,13 +996,25 @@
         Array.prototype.forEach.call(dots.children, function (s, j) { s.classList.toggle('on', j === i); });
       }, { passive: true });
     }
-    fetch('/api/reviews')
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (d && d.ok && d.count > 0 && d.reviews && d.reviews.length) render(d);
-        else noData();
-      })
-      .catch(noData);
+    // ------------------------------------------------------------------
+    // HAND-PICKED GOOGLE REVIEWS. Edit this list to change what shows.
+    // rating/count = the overall numbers on the Google Business Profile.
+    // Leave reviews empty and the section shows a "leave a review" invite.
+    // ------------------------------------------------------------------
+    var BRAXUS_REVIEWS = {
+      rating: 0,      // e.g. 5.0
+      count: 0,       // e.g. 12
+      mapsUrl: 'https://g.page/r/CVLYqCquMpkhEBE',
+      reviews: [
+        // { name: 'First L.', rating: 5, when: 'September 2026', text: 'Review text here.' },
+      ]
+    };
+    if (BRAXUS_REVIEWS.reviews.length) {
+      BRAXUS_REVIEWS.reviews.forEach(function (r) { r.photo = r.photo || ''; r.profile = r.profile || ''; });
+      render(BRAXUS_REVIEWS);
+    } else {
+      noData();
+    }
   })();
 </script>
 <script>
