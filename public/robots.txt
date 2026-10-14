@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://braxusplumbing.com/sitemap.xml

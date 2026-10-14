@@ -64,7 +64,17 @@ Full brand kit (colours, fonts, logo, voice, usage rules): the "Braxus Plumbing"
 ## Website setup
 
 - Code lives in this repo: `github.com/seanbarata12/Braxus`, branch `main`.
-- `public/index.html` is the whole site (one page, plain HTML/CSS, no build step).
+- **Multi-page site since 13 Oct 2026** (plain HTML/CSS, no build step). Sean found the one long page easy to get lost in, so each section is now its own page with a menu:
+  - `public/index.html` → `/` (hero, trust bar, How it works, "Explore Braxus" link cards; Plumber schema)
+  - `public/services.html` → `/services` (service dropdowns; `/services#svc-drain` etc. opens that dropdown)
+  - `public/reviews.html` → `/reviews` (the `BRAXUS_REVIEWS` list now lives in this file)
+  - `public/service-area.html` → `/service-area`
+  - `public/faq.html` → `/faq` (FAQPage schema)
+  - `public/quote.html` → `/quote` (quote form → `/api/quote`)
+  - Shared styles in `public/site.css`, shared script (menu + service-dropdown links) in `public/site.js`. `sitemap.xml` and `robots.txt` added.
+  - Menu: fixed left sidebar on computers (≥1024px wide); on phones/tablets a top bar with logo, call button and a ☰ Menu button that slides the same sidebar out. Current page is marked with `aria-current="page"`.
+  - The sidebar, top bar, footer and mobile Call/Text bar are copied into every page. **When changing any of them, change all six HTML files.**
+  - Cloudflare serves `services.html` at `/services` automatically (and redirects `/services.html` there). Old one-page links like `/#quote` or `/#svc-drain` are redirected to the new pages by a small script on the home page.
 - `wrangler.jsonc` deploys `public/` as static assets. The `name` **must stay `brax`**, the Worker's name in Cloudflare.
 - Cloudflare Workers Builds is connected to this repo: every push to `main` goes live on braxusplumbing.com within a minute or two.
 - **Site polish (29 Sep 2026, branch `quote-form`):** sticky header with active-section underline, hero "What do you need?" quick-pick panel linking to services, faint blueprint grid in hero, trust icons in blue circles, services grouped (Residential / Commercial / Specialty) in white panels with checkmark bullets, How it works as cards, service area beside heading (4 columns), FAQ section (7 questions + FAQPage schema), larger contact rows, mobile Call/Text bar, favicon, Open Graph + Plumber schema. Sean chose NOT to have the blue "Leak, backup or no hot water?" band or the "While you wait" tips.
