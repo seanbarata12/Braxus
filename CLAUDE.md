@@ -93,3 +93,8 @@ Full brand kit (colours, fonts, logo, voice, usage rules): the "Braxus Plumbing"
 
 - 2026-09-30: Fixed mobile layout — Quote and FAQ sections now stack to one column under 900px (they were squeezed into two narrow columns on phones, causing text to overflow). Tightened the "When do you need it?" buttons on phones.
 - 2026-10-05: Added "Check our reviews" section (`#reviews`, dark band between How it works and Where we work, plus a Reviews nav link). Sean chose hand-picked reviews over live Google reviews (the live version needed a Google Cloud API key, too much setup). Reviews are edited in the `BRAXUS_REVIEWS` list in the script near the bottom of `public/index.html` (name, rating, when, text; plus the overall Google rating and count for the summary box). Empty list → the section shows a "leave a review" invite. Buttons: "Leave us a review" → https://g.page/r/CVLYqCquMpkhEBE/review (Sean's Google review link, confirmed working), "See all reviews on Google" → https://g.page/r/CVLYqCquMpkhEBE. Google doesn't allow posting reviews on other sites, so the button opens Google's review box. Claude can't read Google Maps pages, so Sean sends the review text.
+
+## Site icon / favicon (4 Nov 2026)
+- Google search showed a grey globe instead of an icon because the old favicon was an inline `data:` SVG, which Google can't use. Replaced it with real files in `public/`: `favicon.ico` (16/32/48), `favicon.svg`, `favicon-48.png`, `favicon-192.png`, `favicon-512.png`, `apple-touch-icon.png` (180).
+- Design: the white "A" peak with the blue water drop from the logo, on a dark rounded square (`#121318`, drop `#3E8DF6`). The full wordmark is unreadable at favicon size.
+- All six HTML pages link these files in `<head>`; keep them in sync if they change.
