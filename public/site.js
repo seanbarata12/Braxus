@@ -46,4 +46,15 @@
   }
   openFromHash();
   window.addEventListener('hashchange', openFromHash);
+
+  // ---- Quote form: pick the service named in the link (e.g. /quote?service=Water+heater) ----
+  var sel = document.getElementById('q-service');
+  if (sel && window.URLSearchParams) {
+    var want = new URLSearchParams(location.search).get('service');
+    if (want) {
+      for (var i = 0; i < sel.options.length; i++) {
+        if (sel.options[i].text === want) { sel.selectedIndex = i; break; }
+      }
+    }
+  }
 })();

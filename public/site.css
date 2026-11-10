@@ -387,3 +387,67 @@
   @media (prefers-reduced-motion: reduce) {
     .sidebar, .nav-backdrop { transition: none !important; }
   }
+
+/* ---- Service detail pages (/backwater-valve-installation etc.), added 10 Nov 2026 ---- */
+  .crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-size: 13px; color: #8A96A3; }
+  .crumbs a { color: var(--muted-light); border-bottom: 1px solid #2A3E57; }
+  .crumbs a:hover { color: var(--accent-light); border-color: var(--accent); }
+  .crumbs [aria-current] { color: #8A96A3; }
+  .svc-hero h1 { font-size: 40px; }
+  .svc-facts { background: rgba(255,255,255,.03); border: 1px solid var(--line-dark); border-radius: var(--radius); min-width: 0; }
+  .svc-facts ul { list-style: none; margin: 0; padding: 0 22px 18px; }
+  .svc-facts li { position: relative; padding: 12px 0 12px 30px; border-top: 1px solid var(--line-dark); font-size: 15px; color: var(--cream); line-height: 1.45; }
+  .svc-facts li::before { content: ""; position: absolute; left: 2px; top: 16px; width: 14px; height: 8px; border-left: 2px solid var(--accent-light); border-bottom: 2px solid var(--accent-light); transform: rotate(-45deg); }
+  .svc-body { background: var(--white); border-bottom: 1px solid var(--line); }
+  .svc-body .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 56px; align-items: start; }
+  .svc-main { min-width: 0; }
+  .svc-block + .svc-block { margin-top: 44px; padding-top: 44px; border-top: 1px solid var(--line); }
+  .svc-main h2 { font-size: 22px; margin-bottom: 16px; }
+  .svc-main p { margin: 0 0 14px; font-size: 16px; line-height: 1.7; color: var(--body); max-width: 68ch; }
+  .svc-main p:last-child { margin-bottom: 0; }
+  .svc-main a:not(.btn) { color: var(--accent-hover); border-bottom: 1px solid rgba(20,137,250,.35); }
+  .svc-main a:not(.btn):hover { border-color: var(--accent-hover); }
+  .ticks { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; max-width: 68ch; }
+  .ticks li { position: relative; padding-left: 30px; font-size: 16px; line-height: 1.55; color: var(--body); }
+  .ticks li::before { content: ""; position: absolute; left: 3px; top: 6px; width: 13px; height: 7px; border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
+  .svc-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+  .svc-steps li { display: flex; gap: 14px; padding: 18px; background: var(--paper); border-radius: var(--radius); }
+  .svc-steps .n { flex-shrink: 0; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: var(--white); font-family: var(--display); font-weight: 700; font-size: 13px; }
+  .svc-steps b { display: block; margin-bottom: 4px; font-size: 15px; color: var(--ink); }
+  .svc-steps li > span:last-child { font-size: 15px; line-height: 1.55; color: var(--body); }
+  .svc-table { width: 100%; max-width: 560px; border-collapse: collapse; font-size: 15px; }
+  .svc-table td { padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--body); vertical-align: top; }
+  .svc-table td:last-child { text-align: right; font-weight: 600; color: var(--ink); padding-left: 16px; white-space: nowrap; }
+  .svc-table tr:last-child td { border-bottom: 0; font-weight: 600; color: var(--ink); }
+  .svc-side { position: sticky; top: 24px; }
+  .svc-card { display: flex; flex-direction: column; gap: 12px; padding: 24px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); }
+  .svc-card .t { font-family: var(--display); font-weight: 700; font-size: 18px; text-transform: uppercase; }
+  .svc-card p { margin: 0 0 4px; font-size: 15px; line-height: 1.55; color: var(--body); }
+  .svc-card .btn { justify-content: center; }
+  .svc-card .svc-text { text-align: center; font-size: 14px; color: var(--slate); text-decoration: underline; text-underline-offset: 3px; }
+  .svc-related .explore-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+  .svc-related h2 { font-size: 30px; margin-bottom: 28px; }
+  .svc-links { margin-top: 32px; }
+  .svc-links .group-label { margin-bottom: 14px; }
+  .acc .more { display: inline-flex; align-items: center; gap: 6px; margin: 0 22px 20px 22px; font-weight: 600; font-size: 14px; color: var(--accent-hover); }
+  .acc .more:hover { color: var(--ink); }
+  .foot-svcs { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14px; }
+  .foot-svcs .lbl { width: 100%; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #7A8794; }
+  .foot-svcs a { color: var(--muted-light); }
+  .foot-svcs a:hover { color: var(--accent-light); }
+  @media (max-width: 1240px) {
+    .svc-related .explore-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  }
+  @media (max-width: 900px) {
+    .svc-body .wrap { grid-template-columns: 1fr; gap: 40px; }
+    .svc-side { position: static; }
+  }
+  @media (max-width: 760px) {
+    .svc-hero h1 { font-size: 30px; }
+    .svc-steps { grid-template-columns: 1fr; }
+    .svc-block + .svc-block { margin-top: 36px; padding-top: 36px; }
+    .svc-main h2 { font-size: 20px; }
+    .svc-related .explore-grid { grid-template-columns: 1fr; gap: 10px; }
+    .svc-related h2 { font-size: 24px; margin-bottom: 20px; }
+    .acc .more { margin: 0 16px 18px 16px; }
+  }
